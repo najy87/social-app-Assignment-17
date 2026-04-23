@@ -1,0 +1,17 @@
+import { model, Schema, Types } from "mongoose";
+import { IUserReaction, ON_MODEL, SYS_REACTION } from "../../../common";
+
+const schema = new Schema<IUserReaction>(
+  {
+    userId: { type: Types.ObjectId, required: true, ref: "User" },
+    refId: { type: Types.ObjectId, refPath: "onModel", required: true },
+    onModel: { type: String, required: true, enum: ON_MODEL },
+    reaction: {
+      type: Number,
+      enum: SYS_REACTION,
+      default: SYS_REACTION.like,
+    },
+  },
+  { timestamps: true },
+);
+export const UserReaction = model("UserReaction", schema);
