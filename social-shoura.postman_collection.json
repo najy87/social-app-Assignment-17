@@ -1,0 +1,296 @@
+{
+  "info": {
+    "_postman_id": "413234bd-f332-490b-ae3f-d3d2793c9293",
+    "name": "social-shoura",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43093003"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userName\":\"nagy\",\n    \"email\":\"nagytab123@gmail.com\",\n    \"password\":\"ka3bora@123AA\",\n    \"phoneNumber\":\"01026077687\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/signup",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "verify-account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"nagytab123@gmail.com\",\n    \"otp\":\"1016879\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/verify-account",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "verify-account"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "resend-otp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"nagytab123@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/resend-otp",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "resend-otp"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reset-password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"nagytab123@gmail.com\",\n    \"otp\":\"1253115\",\n    \"newPassword\":\"ka3bora@123AAA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/reset-password",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "reset-password"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"nagytab123@gmail.com\",\n    \"password\":\"ka3bora@123AA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "post",
+      "item": [
+        {
+          "name": "create post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"attatchment\":[\"t\",\"p\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/post/",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add reaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"postId\":\"69e7774b64b739d4474dac38\",\n    \"reaction\": \"3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/post/reaction",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "reaction"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comment",
+      "item": [
+        {
+          "name": "create comment or reply",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\":\"1.1\",\n    \"attatchment\":\"url1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/comment/69e7774b64b739d4474dac38",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "69e7774b64b739d4474dac38"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "add reaction to comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"id\":\"69ea54223b6dfd38ec3df06b\",\n    \"reaction\":4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/comment/add-reaction",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "add-reaction"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/comment/69e7774b64b739d4474dac38",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "69e7774b64b739d4474dac38"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
